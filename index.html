@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100b2d">
+<title>For Maja ✦ An Emerald Universe Just for You</title>
+<style>
+:root{--pink:#8fffd0;--lilac:#65f5b2;--white:#f0fff7;--glass:rgba(3,20,15,.78)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#08071c;color:var(--white);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:-3;background:radial-gradient(ellipse at 20% 15%,#064b36 0,transparent 42%),radial-gradient(ellipse at 85% 35%,#063e32 0,transparent 36%),radial-gradient(ellipse at 50% 90%,#08251f 0,transparent 48%),#030806}
+.nebula{position:fixed;inset:-20%;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 30% 50%,rgba(0,255,153,.16),transparent 40%),radial-gradient(ellipse at 75% 60%,rgba(37,190,119,.12),transparent 34%);filter:blur(16px);animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(3%, -2%) scale(1.06)}}
+.star{position:fixed;width:3px;height:3px;border-radius:50%;background:#fff;box-shadow:0 0 9px 2px rgba(255,255,255,.65);z-index:-1;animation:twinkle var(--dur,3s) ease-in-out infinite alternate;pointer-events:none}
+@keyframes twinkle{from{opacity:.25;transform:scale(.7)}to{opacity:1;transform:scale(1.35)}}
+.moon{position:fixed;right:8%;top:8%;width:70px;height:70px;border-radius:50%;background:#fff2d8;box-shadow:0 0 35px rgba(179,255,216,.28),0 0 100px rgba(0,255,153,.18);z-index:-1;opacity:.82}
+.moon:after{content:"";position:absolute;left:19px;top:-7px;width:70px;height:70px;border-radius:50%;background:#06140d}
+main{width:min(880px,92vw);margin:auto}
+section{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 8px;position:relative}
+.eyebrow{font: .72rem/1.4 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.28em;color:var(--lilac)}
+h1{font-size:clamp(2.7rem,10vw,5.8rem);line-height:.98;font-weight:normal;margin:18px 0;color:#effff6;text-shadow:0 0 28px rgba(0,255,153,.28)}
+h2{font-size:clamp(2rem,7vw,3.5rem);font-weight:normal;margin:12px 0 20px}
+p{font-size:clamp(1.05rem,3vw,1.25rem);line-height:1.8;color:#dcf8e8;max-width:650px}
+.script{font-style:italic;color:var(--pink)}
+.btn{border:1px solid rgba(117,255,191,.62);background:linear-gradient(135deg,rgba(0,255,153,.17),rgba(36,148,92,.18));color:white;padding:14px 22px;border-radius:999px;margin:12px 6px;box-shadow:0 0 24px rgba(0,255,153,.12);transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:rgba(0,255,153,.18)}
+.hidden{display:none!important}
+.glass{width:min(680px,100%);padding:28px 22px;border:1px solid rgba(117,255,191,.22);border-radius:24px;background:var(--glass);backdrop-filter:blur(12px);box-shadow:0 18px 80px rgba(0,0,0,.18)}
+.star-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:min(560px,100%);margin:20px auto}
+.star-card{min-height:116px;border:1px solid rgba(117,255,191,.23);border-radius:18px;background:rgba(255,255,255,.055);color:white;padding:12px 8px;transition:.2s}
+.star-card span{display:block;font-size:2rem;margin-bottom:8px;filter:drop-shadow(0 0 9px #f8a9e1)}
+.star-card small{font: .8rem system-ui,sans-serif;color:#b8ffda}
+.star-card:hover{transform:translateY(-4px);background:rgba(0,255,153,.12)}
+.message{margin:18px auto 0;color:#b8ffda;min-height:58px}
+.progress{font: .8rem system-ui,sans-serif;color:#85e8b4;letter-spacing:.08em}
+.polaroid{background:#fff9ff;color:#173a29;padding:12px 12px 24px;transform:rotate(-2deg);width:min(260px,80vw);margin:24px auto;box-shadow:0 14px 50px #0005}
+.photo-placeholder{height:230px;background:linear-gradient(145deg,#064b36,#16a56a,#071b14);display:flex;align-items:center;justify-content:center;font-size:3rem}
+.polaroid p{color:#24583d;font-size:1rem;margin:14px 0 0}
+input{max-width:100%;background:#07150f;color:white;border:1px solid #55d99b;border-radius:12px;padding:12px;font-size:1rem;text-align:center}
+.gift{font-size:5rem;display:block;animation:bob 2.2s ease-in-out infinite;filter:drop-shadow(0 0 18px rgba(0,255,153,.35))}
+@keyframes bob{50%{transform:translateY(-9px) rotate(3deg)}}
+.letter{text-align:left;white-space:pre-line}
+footer{text-align:center;padding:20px 12px 45px;color:#6a9c7f;font: .8rem system-ui,sans-serif}
+.heart{position:fixed;pointer-events:none;z-index:5;animation:floatUp 2.5s ease-out forwards;font-size:20px}
+@keyframes floatUp{to{transform:translateY(-180px) translateX(var(--dx,20px)) scale(1.7);opacity:0}}
+@media(max-width:500px){.star-map{gap:7px}.star-card{min-height:102px}.moon{width:48px;height:48px;right:7%;top:5%}.moon:after{width:48px;height:48px;left:14px;top:-5px}}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas><div class="nebula"></div><div class="moon"></div>
+<main>
+<section id="welcome">
+<div class="eyebrow">a little something made with love · emerald edition</div>
+<h1>For Maja<span class="script"> ✦</span></h1>
+<p>Somewhere in this enormous universe, there is one person who makes my little corner of it feel brighter.</p>
+<p class="script">This emerald universe is for you, my favourite person. 💚</p>
+<button class="btn" onclick="begin()">Follow the stars ✨</button>
+<div class="progress">YOUR LITTLE ADVENTURE STARTS HERE</div>
+</section>
+
+<section id="starsSection">
+<div class="eyebrow">chapter one · little pieces of my heart</div>
+<h2>Choose a star, <span class="script">my love</span></h2>
+<p>Every star is hiding a little message. Tap all six to unlock the next part of your adventure.</p>
+<div class="star-map" id="starMap">
+<button class="star-card" onclick="reveal(0,this)"><span>✦</span><small>Star One</small></button>
+<button class="star-card" onclick="reveal(1,this)"><span>✧</span><small>Star Two</small></button>
+<button class="star-card" onclick="reveal(2,this)"><span>✦</span><small>Star Three</small></button>
+<button class="star-card" onclick="reveal(3,this)"><span>✧</span><small>Star Four</small></button>
+<button class="star-card" onclick="reveal(4,this)"><span>✦</span><small>Star Five</small></button>
+<button class="star-card" onclick="reveal(5,this)"><span>✧</span><small>Star Six</small></button>
+</div>
+<div id="starMessage" class="glass message hidden" aria-live="polite"></div>
+<p class="progress" id="starProgress">0 / 6 stars discovered</p>
+<button class="btn hidden" id="toGame" onclick="go('game')">A tiny challenge awaits →</button>
+</section>
+
+<section id="game" class="hidden">
+<div class="eyebrow">chapter two · important scientific research</div>
+<h2>A very serious question 🧐</h2>
+<div class="glass">
+<p>Can you find the one thing in this universe that is even cuter than a little space bunny?</p>
+<div style="font-size:2.5rem;margin:16px">🐰 🌙 ⭐</div>
+<button class="btn" onclick="wrongAnswer()">The moon? 🌙</button>
+<button class="btn" onclick="wrongAnswer()">A baby star? ⭐</button>
+<button class="btn" onclick="rightAnswer()">Obviously Maja. 💗</button>
+<div id="gameMessage" class="message" aria-live="polite"></div>
+</div>
+<button class="btn hidden" id="toMemory" onclick="go('memory')">Okay, genius, continue →</button>
+</section>
+
+<section id="memory" class="hidden">
+<div class="eyebrow">chapter three · our little corner of the cosmos</div>
+<h2>Memories in the stars</h2>
+<p>Some memories deserve their own little constellation. Add a photo and a caption below to make this part truly yours.</p>
+<div class="polaroid">
+<div class="photo-placeholder" id="photoPreview">🌌💗🌙</div>
+<p id="captionPreview">A little memory I want to keep forever</p>
+</div>
+<label for="photoInput" class="btn">Choose a photo from your device 📸</label>
+<input id="photoInput" type="file" accept="image/*" class="hidden">
+<input id="captionInput" type="text" maxlength="90" placeholder="Write a memory caption…" aria-label="Memory caption">
+<button class="btn" onclick="updateCaption()">Keep this memory ✨</button>
+<p style="font-size:.9rem">Photo preview is only on the device you're using. To include a photo in the shared website, we'll add it to the project files before publishing.</p>
+<button class="btn" onclick="go('gift')">There's a present ahead →</button>
+</section>
+
+<section id="gift" class="hidden">
+<div class="eyebrow">chapter four · delivered by the stars</div>
+<h2>A little present for you</h2>
+<p>It's been guarded by a very tiny, very professional space dragon.</p>
+<button class="btn" id="giftButton" onclick="openGift()"><span class="gift">🎁</span><br>Tap to open your present</button>
+<div id="giftNote" class="glass hidden">
+<h2 class="script">Surprise, Maja! 💚</h2>
+<p>There are a million things I could give you, but today I wanted to give you something made from my time, my thoughts, and all the love I wanted to put into one little place.</p>
+<p>And the tiny space dragon says you are officially allowed to be spoiled today. 🐉</p>
+</div>
+<button class="btn hidden" id="toLetter" onclick="go('letter')">One last constellation… →</button>
+</section>
+
+<section id="letter" class="hidden">
+<div class="eyebrow">the final chapter · from my heart to yours</div>
+<h2>To my Maja, <span class="script">with all my love</span></h2>
+<div class="glass letter" id="letterBox">
+<p>My Maja,</p>
+<p>Happy birthday, my love. ❤️</p>
+<p>I made this little universe because I wanted to give you something that feels personal: something you can explore, smile at, and know that I made while thinking of you.</p>
+<p>You are one of the most important people in my world. Even with an entire sky full of stars, I would still find myself looking for yours.</p>
+<p>I hope this new year of your life brings you gentle days, reasons to laugh until your cheeks hurt, dreams that come closer, and people who remind you how precious you are. I hope you feel loved not only today, but in all the ordinary little moments that make up a life.</p>
+<p>Thank you for being you, for the moments we've shared, and for the memories we still have the chance to make. If I could put every warm thought I have for you into the sky, I think the night would never be dark again.</p>
+<p>So here's your little galaxy, Maja. A small gift, made with care, for a person who means so much to me.</p>
+<p class="script">Happy birthday, my favourite person in this universe. 🌙💚</p>
+<p>Always with love,<br><strong>John</strong></p>
+</div>
+<p class="script">P.S. You may now claim unlimited birthday hugs. This is legally binding in the Kingdom of Cuteness. 🐰</p>
+<button class="btn" onclick="sprinkleHearts()">Make the stars celebrate 💖</button>
+</section>
+</main>
+<footer>made slowly, with love, under the same sky ✦</footer>
+<script>
+const starMessages=[
+"One little truth: you don't have to be perfect to be precious to me. You get to be fully, wonderfully yourself. 💗",
+"Official announcement from the galaxy: your smile has been reported for making one human ridiculously happy. 🚨💕",
+"If I could bottle one feeling and give it to you, it would be the warmth of knowing someone is cheering for you, always.",
+"Some people look at the stars to make a wish. I look at them and think how lucky I am that our paths crossed. ✨",
+"Secret space fact: this universe contains billions of galaxies, but none of them has a Maja quite like mine. 🌙",
+"Your final star says: please remember to be gentle with yourself, laugh often, and let yourself be celebrated today. You deserve it. 🎂"
+];
+let found=new Set();
+function begin(){go('starsSection');sprinkleHearts()}
+function go(id){document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});if(id==='starsSection')sprinkleHearts()}
+function reveal(i,el){if(found.has(i))return;found.add(i);el.querySelector('span').textContent='💖';el.querySelector('small').textContent='Discovered!';const box=document.getElementById('starMessage');box.classList.remove('hidden');box.textContent=starMessages[i];document.getElementById('starProgress').textContent=found.size+' / 6 stars discovered';sprinkleHearts();if(found.size===6)document.getElementById('toGame').classList.remove('hidden')}
+function wrongAnswer(){document.getElementById('gameMessage').textContent="A strong guess… but the tiny space bunny requests a second attempt. 🐰"}
+function rightAnswer(){document.getElementById('gameMessage').textContent="CORRECT. The bunny has approved your answer. Maja wins the universe. 🏆💗";document.getElementById('toMemory').classList.remove('hidden');sprinkleHearts()}
+function openGift(){document.getElementById('giftButton').classList.add('hidden');document.getElementById('giftNote').classList.remove('hidden');document.getElementById('toLetter').classList.remove('hidden');sprinkleHearts()}
+function sprinkleHearts(){const symbols=['💗','✨','💕','⭐','💖'];for(let i=0;i<16;i++){const e=document.createElement('div');e.className='heart';e.textContent=symbols[Math.floor(Math.random()*symbols.length)];e.style.left=Math.random()*100+'vw';e.style.bottom=(Math.random()*18)+'vh';e.style.setProperty('--dx',(Math.random()*120-60)+'px');document.body.appendChild(e);setTimeout(()=>e.remove(),2600)}}
+document.getElementById('photoInput').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=ev=>{const img=document.createElement('img');img.src=ev.target.result;img.style.cssText='width:100%;height:230px;object-fit:cover;display:block';const p=document.getElementById('photoPreview');p.innerHTML='';p.appendChild(img)};reader.readAsDataURL(f)});
+function updateCaption(){const val=document.getElementById('captionInput').value.trim();if(val)document.getElementById('captionPreview').textContent=val;else document.getElementById('captionPreview').textContent='A little memory I want to keep forever';}
+const canvas=document.getElementById('sky'),ctx=canvas.getContext('2d');let stars=[];
+function resize(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);stars=Array.from({length:Math.min(180,Math.floor(innerWidth/4))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5+.3,a:Math.random(),v:Math.random()*.008+.002}))}
+function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);for(const s of stars){s.a+=s.v;if(s.a>1||s.a<.15)s.v*=-1;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(190,255,220,${s.a})`;ctx.fill()}requestAnimationFrame(draw)}
+addEventListener('resize',resize);resize();draw();
+for(let i=0;i<34;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.setProperty('--dur',(2+Math.random()*4)+'s');s.style.animationDelay=(Math.random()*4)+'s';document.body.appendChild(s)}
+</script>
+</body>
+</html>
